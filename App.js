@@ -1,6 +1,6 @@
-function searchCategory(category){
+const searchInput = document.getElementById("inputBox");
 
-    const searchInput = document.getElementById("inputBox").value.toLowerCase();
+function searchCategory(category){
 
     let mainlist = document.getElementById("mainlist");
     mainlist.innerHTML = "";
@@ -10,9 +10,9 @@ function searchCategory(category){
         .then(data => {
             data.centres.forEach(centre => {    
                 
-                if ((category === 'name' && centre.name.toLowerCase().includes(searchInput)) ||
-                (category === 'Place' && centre.Place.toLowerCase().includes(searchInput)) ||
-                (category === 'State' && centre.State.toLowerCase().includes(searchInput)) || category === '') {       
+                if ((category === 'name' && centre.name.toLowerCase().includes(searchInput.value.toLowerCase())) ||
+                (category === 'Place' && centre.Place.toLowerCase().includes(searchInput.value.toLowerCase())) ||
+                (category === 'State' && centre.State.toLowerCase().includes(searchInput.value.toLowerCase())) || category === '') {       
                     let newlist = document.createElement("li");
                     let newlistdata = `
                             <div class="listHead" id="CenterData">CENTER 
@@ -40,3 +40,8 @@ function searchCategory(category){
 }
 
 searchCategory("");
+
+searchInput.addEventListener("input", ()=>{
+    searchCategory(document.querySelector('input[name="FillterBtns"]:checked').value);
+    console.log(searchInput.value)
+});

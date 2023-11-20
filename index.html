@@ -26,9 +26,12 @@
                     <input id="inputBox" type="text" placeholder="Type here....">
                     <img src="./Src/search-symbol.png" id="search-symbol" alt="search symbol">
                 </div>
-                <button class="btn" id="centerBtn" onclick="searchCategory('name')">CENTER</button>
-                <button class="btn" id="cityBtn" onclick="searchCategory('Place')">CITY</button>
-                <button class="btn" id="stateBtn" onclick="searchCategory('State')">STATE</button>
+                <input type="radio" id="centerBtn" name="FillterBtns" value="name" checked> <label for="centerBtn" class="btn" >CENTER</label>
+                <input type="radio" id="cityBtn" name="FillterBtns" value="Place"> <label for="cityBtn" class="btn" >CITY</label>
+                <input type="radio" id="stateBtn" name="FillterBtns" value="State"> <label for="stateBtn" class="btn" >STATE</label>
+                <!-- <button class="btn" id="centerBtn" onclick="searchCategory('name')">CENTER</button> -->
+                <!-- <button class="btn" id="cityBtn" onclick="searchCategory('Place')">CITY</button>
+                <button class="btn" id="stateBtn" onclick="searchCategory('State')">STATE</button> -->
             </div>
             <div id="MainData">
                 <ul id="mainlist">
